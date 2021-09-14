@@ -2,7 +2,7 @@
 A NodeJS project which handles both backend and front and of a Stock Image Sharing platform. 
 With the help of node modules like JIMP, nedb, ejs, express and async.
 
-***USAGE***
+***USAGE :***  
 Start the server by running the 'index.js' file.
 ```node index.js```
 
