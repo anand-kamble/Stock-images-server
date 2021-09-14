@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Watch Me !!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='/getcss/image.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body onload="imageZoom('myimage', 'myresult')">
+  
+    <!-- <div id="imageholder"> -->
+        <div id="header">
+          <h2>preety image.</h2>
+          <button id="uploadbtn" onclick="window.open('/upload')">UPLOAD</button>
+        </div>
+            
+       <!-- <img id="myimage" src="/getmeimage/2v8qpwv4lel61.jpg" alt="Girl"> -->
+
+        <div id="baap">
+          <div class="img-zoom-container">
+            <div class="img-zoom-lens" style="left: 382px; top: 318px;"  id="lens_for_zoom"></div>
+            <img id="myimage" src="/getmeimage/<%=imageName%>/<%=imageViewKey%>" alt="Preety Image"  >
+          </div>
+        </div>
+      
+        <div id="myresult" class="img-zoom-result"></div>
+    <!-- </div> -->
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+        <p id="zmstrds">Zoom Strength : 1</p>
+      </div>
+      <div id="titlehold">
+        <h3><%=tiTle%></h3>
+      </div>
+      <div id="details">
+        
+        <div id="description">
+          <p>
+            <%=desCriPtion%>
+          </p>
+          <p id="uploadeddate">
+            Uploaded 
+          </p>
+        </div>
+        <div id="tags">
+            <p>Tags : </p>
+        </div>
+      </div>
+    
+    <div id="buttonspace">
+      
+    </div>
+    <div class="row">
+      <div class="column" id="column_1">
+        
+      </div>
+      <div class="column" id="column_2">
+        
+      </div>
+      <div class="column" id="column_3">
+        
+      </div>
+      <div class="column" id="column_4">
+        
+      </div>
+    </div>
+</body>
+<style>
+  
+</style>
+
+<script src="/sctipts/getdata.js"></script>
+<script src="/sctipts/imagezooming.js"></script>
+<script>
+  var tags = '<%=taGs%>';
+  var timeuploaded = <%=timeofupload%>;
+  
+var s = new Date(timeuploaded).toLocaleDateString("en-US")
+console.log(s)
+var uploaddate = document.getElementById("uploadeddate");
+uploaddate.innerText = 'Uploaded on ' + s;
+
+var tag = tags.split(',');
+var tag_div = document.getElementById("tags");
+tag.forEach((tag)=>{
+      var tag_html = `<button class="tagbtn" onclick="window.open('/tag/${tag}');">#${tag}</button>`;
+      tag_div.insertAdjacentHTML('beforeend',tag_html);
+})
+</script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TEST</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>TEST</h1>
+    <div class="maindiv">
+        <h2 style="text-align: center;">Upload</h2>
+        <div class="uploader">
+            <form id="upload_form" enctype="multipart/form-data" method="post">
+            <input type="file" name="file" id="file"><br>
+            <input type="text" name="title" id="title"><br>
+            <button type="button" onclick="uploadFile()">UPLOADDD</button>
+            <progress id="progressBar" value="0" max="100" style="width:50vw;" ></progress>
+            <h3 id="status"></h3>
+            <p id="loaded_n_total"></p>
+            </form>
+        </div>
+    </div>
+    <div class="lds-ripple" id="loader"><div></div><div></div></div>
+    <img id="main_vd" >
+    <form name="videoselect">
+        <input type="number" name="vd_num">
+    </form>
+    <button onclick="load()">Load</button>
+</body>
+<script>var name = "<%= name %>";</script>
+
+<script>
+    console.log(name);
+        /*var datatype = 'data:video/mp4;base64,';
+    async function load(){
+        let x = document.forms["videoselect"]["vd_num"].value;
+        console.log(x);
+
+        var a = await $.ajax({
+        url: 'http://localhost:8080/givememedia',
+        data: {number : x},
+        success : function(res){
+            var loader = document.getElementById("loader");
+            var element = document.getElementById("main_vd");
+            element.src = datatype + res;
+            loader.style = "display:none;"
+        }
+    });
+    
+    }*/
+</script>
+<script>
+    function _(el) {
+  return document.getElementById(el);
+}
+
+function uploadFile() {
+  var file = _("file").files[0];
+  var title = _("title").value;
+  // alert(file.name+" | "+file.size+" | "+file.type);
+  var formdata = new FormData();
+  console.log(title)
+  formdata.append("title",title)
+  formdata.append("file", file);
+  
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler, false);
+  ajax.addEventListener("load", completeHandler, false);
+  ajax.addEventListener("error", errorHandler, false);
+  ajax.addEventListener("abort", abortHandler, false);
+  ajax.open("POST", "/uploadfile"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  //use file_upload_parser.php from above url
+  ajax.send(formdata);
+}
+
+function progressHandler(event) {
+  _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+  var percent = (event.loaded / event.total) * 100;
+  _("progressBar").value = Math.round(percent);
+  _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+}
+
+function completeHandler(event) {
+  _("status").innerHTML = event.target.responseText;
+  _("progressBar").value = 0; //wil clear progress bar after successful upload
+}
+
+function errorHandler(event) {
+  _("status").innerHTML = "Upload Failed";
+}
+
+function abortHandler(event) {
+  _("status").innerHTML = "Upload Aborted";
+}
+</script>
+<style>
+    #file{
+        padding: 20px;
+        text-align: center;
+
+    }   
+    .maindiv{
+        background-color: aqua;
+        width: 60vw;
+        margin: auto;
+        font-size: 30px;
+    }
+    .uploader{
+        width: 50vw;
+        margin: auto;
+    }
+</style>    
+</html>
+

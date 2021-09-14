@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/getcss/upload.css'>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div id="dropContainer" class="drop_space">
+        <p id="drop_here">Drop it in !!</p>
+        <p id="validity_info"></p>
+     </div>
+       <input type="file" id="fileInput" class="upload_manual" />
+
+    <div id="file_metadata">
+        <div id="form_holder">
+            <form class="metadata_form" name="metadata">
+                <div class="text_from_holder">
+                    <label id="title" for="title" class="placeholder">Title</label><br>
+                    <input name="title" type="text" class="text_form" id="form_title" required /><br>
+                </div>
+                <div class="text_from_holder">
+                    <label id="discription_to_upload" for="discription_to_upload" class="placeholder">Description</label><br>
+                    <input name="discription_to_upload" type="text" class="text_form" /><br>
+                </div>
+                <div class="text_from_holder">
+                    <label id="tags" for="tags" class="placeholder">Tags</label><br>
+                    <input name="tags" type="text" class="text_form" placeholder="Seperate tags by comma" /><br>
+                </div>
+                <div class="container">
+                    <div class="switch-holder">
+                        <div class="switch-label">
+                            <!-- <i class="fa fa-bluetooth-b"></i> -->
+                            <p class="toggle_switch_label">Does this content has anything sketchy in it ?</p>
+                        </div>
+                        <div class="switch-toggle">
+                            <input type="checkbox" id="bluetooth" name="toggle_switch">
+                            <label for="bluetooth"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-light-grey w3-round">
+                    <div id="progressBar" class="w3-container w3-blue w3-round" style="width:25%">25%</div>
+                  </div>
+                <button class="upload_button" id="upload_button" type="button" onclick="checking_form()">UPLOAD</button>
+                <h3 id="status"></h3>
+                <p id="loaded_n_total"></p>
+            </form>
+            
+        </div>
+        <div id="livelinkdiv">
+            <p>Your Image will be soon live at</p>
+            <a id="livelink" href="/vijdifhi">LINK TO YOUR IMAGE</a>
+        </div>
+    </div>
+</body>
+<script src='/sctipts/upload.js'></script>
+</html>

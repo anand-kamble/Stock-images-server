@@ -1,0 +1,30 @@
+{
+  "name": "stock-image-server",
+  "version": "1.0.0",
+  "description": "A NodeJS project which handles both backend and front and of a Stock Image Sharing platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anand Kamble",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.0",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.6",
+    "nedb": "^1.8.0",
+    "jimp": "^0.16.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anand-kamble/Stock-images-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anand-kamble/Stock-images-server/issues"
+  },
+  "homepage": "https://github.com/anand-kamble/Stock-images-server#readme"
+}
