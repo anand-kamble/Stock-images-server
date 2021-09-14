@@ -30,3 +30,6 @@ After the uploading to the server image will be processed and it's different siz
 ## Compatibility :  
 NodeJS v14.17.3 or higher.
 
+## Warning :  
+This program requires systems with minimum 2 GB RAM for processing images.
+Running this on systems like Raspberry Pi may raise a error related to insufficient memory.
