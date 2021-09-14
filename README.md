@@ -14,7 +14,11 @@ On the home page, random image from the database is served along with the thumbn
 ![Preview of the home page](Preview.jpg)
 
 
-Users can also upload file on the server through the upload page.  
+### Users can also upload file on the server through the upload page.  
+
 Where they can drag and drop the file and the page will check the if the file meets the specified requirements of the server.
 If files don't match the requirements, users will be get a message about which required parameter their file lacks.
 
+![Upload warning preview](upload_preview.jpg)
+
+If the file matches the required parameters then a form will appear where users can fill in the details of the image.
