@@ -1,7 +1,7 @@
 # Stock-images-server
 
 A NodeJS project which handles both backend and front and of a Stock Image Sharing platform. 
-With the help of node modules like JIMP, nedb, ejs, express and async.
+Devoloped with the help of node modules like JIMP, nedb, ejs, express and async.
 
 ## USAGE :
 Start the server by running the 'index.js' file.  
@@ -22,3 +22,11 @@ If files don't match the requirements, users will be get a message about which r
 ![Upload warning preview](upload_preview.jpg)
 
 If the file matches the required parameters then a form will appear where users can fill in the details of the image.
+
+![upload form](upload_form.png)
+
+After the uploading to the server image will be processed and it's different sized versions will be created for thumbnail purpose.
+
+## Compatibility :  
+NodeJS v14.17.3 or higher.
+
