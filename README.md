@@ -1,8 +1,8 @@
 <h1 align="center">Stock-images-server</h1>  
   
 
-A NodeJS project which handles both backend and front and of a Stock Image Sharing platform. 
-Devoloped with the help of node modules like JIMP, nedb, ejs, express and async.
+<p align="left">  A NodeJS project which handles both backend and front and of a Stock Image Sharing platform. 
+Devoloped with the help of node modules like JIMP, nedb, ejs, express and async.</p>
   
     
 ## USAGE :
